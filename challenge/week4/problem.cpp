@@ -21,7 +21,7 @@ int main() {
         cout << "답을 입력하세요: ";
         cin >> userAnswer; // 사용자 입력 받기
 
-        // 정답 평가
+        
         if (userAnswer == ans) {
             cout << "정답입니다!" << endl;
         } else {

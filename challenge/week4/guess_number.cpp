@@ -11,7 +11,7 @@ int main() {
 
     cout << "0부터 99 사이의 정수를 맞추세요!" << endl;
 
-    // do-while 문을 사용하여 맞추기 시도
+    
     do {
         cout << "입력하세요: ";
         cin >> guess; // 사용자 입력

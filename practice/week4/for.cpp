@@ -12,5 +12,6 @@ int main() {
         fact = fact *i;
 
     cout << n << "!은 " << fact << "입니다. \n";
+    
     return 0;
 }

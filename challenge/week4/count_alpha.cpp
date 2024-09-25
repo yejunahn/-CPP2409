@@ -8,7 +8,6 @@ int main() {
 
     cout << "영문자를 입력하고 ctrl+z를 치세요:" << endl;
 
-    // 사용자 입력을 받는 동안 반복
     while (cin >> ch) {
         switch (ch) {
             // 모음인 경우

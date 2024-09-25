@@ -15,5 +15,6 @@ int main() {
     }
     
     cout << "종료 되었습니다.";
+    
     return 0;
 }
