@@ -51,8 +51,8 @@ int main() {
     
     default:
         cout << "잘못된 입력입니다." << endl;
-        break;//
-    }
+        break;
+    }//
 
     return 0;
 }
