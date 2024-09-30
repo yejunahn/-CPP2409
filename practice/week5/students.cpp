@@ -18,5 +18,5 @@ int main() {
     average = sum/Students;
     cout << "성적 평균= " << average << endl;
 
-    return 0;
+    return 0;//
 }

@@ -10,10 +10,10 @@ int main() {
         for( int j = 0; j < i; j++){
             cout << "S";
         }
-        for (int k = 0; k<(2*floor  -1;k++)) {
+        for (int k = 0; k<(2*floor  -1); k++) {
             cout << "*";
         }
         cout << endl;
     }
-    return 0;
+    return 0;//
 }

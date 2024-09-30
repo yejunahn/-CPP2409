@@ -19,6 +19,6 @@ int main() {
         }
     }
     cout << "최댓값 =" << max << endl;
-    return 0;
+    return 0;//
 
 }
