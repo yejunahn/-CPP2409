@@ -13,7 +13,7 @@ int main() {
         for (int k = 11-2*i; k>0; k--) {
             cout << "*";
         }
-        cout << endl;
+        cout << endl;//
     }
     return 0;
 }
