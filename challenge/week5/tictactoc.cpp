@@ -96,7 +96,7 @@ int main(){
             break; // 모든 칸이 차면 게임 종료
         }
 
-        k++;//
+        k++;
     }
 
     return 0;
