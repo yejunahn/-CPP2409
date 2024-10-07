@@ -9,6 +9,7 @@
                 "-std=c++14",
                 "-g",
                 "${file}",
+                //"${fileDirname}\\**.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
