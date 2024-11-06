@@ -1,6 +1,7 @@
 #include <iostream>
+#include <vector>
 #include <string>
-#include "user.h"
+#include "user.h"  // User 클래스가 정의된 헤더 파일
 using namespace std;
 
 const int mapX = 5;
@@ -9,13 +10,14 @@ const int INITIAL_HP = 20;
 
 // 함수 선언
 bool checkXY(int user_x, int user_y);
-void displayMap(int map[][mapX], int user_x, int user_y);
-bool checkGoal(int map[][mapX], int user_x, int user_y);
-void interactWithPosition(int map[][mapX], User& user);
+void displayMap(const vector<vector<int>>& map, int user_x, int user_y);
+bool checkGoal(const vector<vector<int>>& map, int user_x, int user_y);
+void interactWithPosition(vector<vector<int>>& map, User& user);
 bool CheckUser(const User& user);
 
 int main() {
-    int map[mapY][mapX] = {
+    // 2차원 벡터로 맵 선언
+    vector<vector<int>> map = {
         {0, 1, 2, 0, 4},
         {1, 0, 0, 2, 0},
         {0, 0, 0, 0, 0},
@@ -95,9 +97,9 @@ int main() {
 }
 
 // 사용자 위치와 이벤트를 출력하는 함수
-void displayMap(int map[][mapX], int user_x, int user_y) {
-    for (int i = 0; i < mapY; i++) {
-        for (int j = 0; j < mapX; j++) {
+void displayMap(const vector<vector<int>>& map, int user_x, int user_y) {
+    for (int i = 0; i < map.size(); i++) {
+        for (int j = 0; j < map[i].size(); j++) {
             if (i == user_y && j == user_x) {
                 cout << " USER |";
             } else {
@@ -122,7 +124,7 @@ bool checkXY(int user_x, int user_y) {
 }
 
 // 현재 위치에 상호작용 요소가 있는지 확인하고 이벤트 처리
-void interactWithPosition(int map[][mapX], User& user) {
+void interactWithPosition(vector<vector<int>>& map, User& user) {
     switch (map[user.getY()][user.getX()]) {
         case 1:
             cout << "아이템을 발견했습니다!" << endl;
@@ -140,7 +142,7 @@ void interactWithPosition(int map[][mapX], User& user) {
 }
 
 // 유저가 목표 지점에 도달했는지 체크하는 함수
-bool checkGoal(int map[][mapX], int user_x, int user_y) {
+bool checkGoal(const vector<vector<int>>& map, int user_x, int user_y) {
     return map[user_y][user_x] == 4;
 }
 
