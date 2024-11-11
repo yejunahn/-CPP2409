@@ -17,5 +17,6 @@ case 1:
     default:
      cout << "many" << endl ;
     break;
-} return 0;
+} 
+return 0;
 }

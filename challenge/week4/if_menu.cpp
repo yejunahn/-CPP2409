@@ -20,5 +20,6 @@ int main() {
     else {
        cout << "잘못된 선택입니다." << endl; 
     }
+   
     return 0;
 }
