@@ -1,7 +1,7 @@
 #include "user.h"
 
-// 생성자
-User::User(int startX, int startY, int startHP) : x(startX), y(startY), hp(startHP) {}
+// User 클래스의 구현
+User::User(int startX, int startY, int startHP) : x(startX), y(startY), hp(startHP), itemCnt(0) {}
 
 // 현재 위치 반환
 int User::getX() const { return x; }
@@ -18,3 +18,13 @@ int User::getHP() const { return hp; }
 
 // 체력 체크 함수
 bool User::isAlive() const { return hp > 0; }
+
+// 공격 함수 (기본 버전)
+void User::doAttack() const {
+    std::cout << "공격합니다!" << std::endl;
+}
+
+// Magician 클래스의 구현 (별도 구현 필요 없음, header에 inline 정의)
+
+// Warrior 클래스의 구현 (별도 구현 필요 없음, header에 inline 정의)
+
