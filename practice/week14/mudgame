@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream os("map.txt");
+    if(!os){
+        cerr << "파일 오픈에 실패하였습니다" << endl;
+        exit(1);
+    }
+    try {
+        os << "0 1 2 0 4\n";
+        os << "1 0 0 2 0\n";
+        os << "0 0 0 0 0\n";
+        os << "0 2 3 0 0\n";
+        os << "3 0 0 0 2\n";
+    } catch (const exception& e) {
+        cerr << "파일 작성 중 오류 발생: " << e.what() << endl;
+        exit(1);
+    }
+    os.close(); // 파일 닫기
+
+    // 파일 읽기
+    ifstream is{"map.txt"};
+    if(!is) {
+        cerr << "파일 오픈에 실패하였습니다" << endl;
+        exit(1);
+    }
+    try {
+        int number;
+        while(is >> number) { // 정확히 숫자를 읽었는지 확인
+            cout << number << " ";
+        }
+        if (is.fail() && !is.eof()) { // 스트림 오류가 발생했는지 확인
+            throw runtime_error("파일 읽기 중 오류 발생");
+        }
+    } catch (const exception& e) {
+        cerr << "오류: " << e.what() << endl;
+        exit(1);
+    }
+    cout << endl;
+    return 0;
+}
+
